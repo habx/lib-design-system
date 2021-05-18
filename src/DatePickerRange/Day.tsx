@@ -47,11 +47,18 @@ export const Day: React.VoidFunctionComponent<DayProps> = ({
   })
 
   const state = React.useMemo(() => {
-    if (startDate && isSameDay(startDate, date)) {
+    const isStartDate = !!startDate && isSameDay(startDate, date)
+    const isEndDate = !!endDate && isSameDay(endDate, date)
+
+    if (isStartDate && isEndDate) {
+      return 'selected-start-end'
+    }
+
+    if (isStartDate) {
       return 'selected-start'
     }
 
-    if (endDate && isSameDay(endDate, date)) {
+    if (isEndDate) {
       return 'selected-end'
     }
 

@@ -110,19 +110,22 @@ export const DayContainer = styled.button`
   }
 
   &[data-state='selected-start'],
-  &[data-state='selected-end'] {
+  &[data-state='selected-end'],
+  &[data-state='selected-start-end'] {
     --day-color: ${theme.color('primary', {
       variation: 'contrastText',
     })};
     --day-background-color: ${theme.color('primary')};
   }
 
-  &[data-state='selected-start'] {
+  &[data-state='selected-start'],
+  &[data-state='selected-start-end'] {
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
   }
 
-  &[data-state='selected-end'] {
+  &[data-state='selected-end'],
+  &[data-state='selected-start-end'] {
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
   }
